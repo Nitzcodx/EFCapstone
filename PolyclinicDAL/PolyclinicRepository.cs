@@ -116,12 +116,11 @@ namespace PolyclinicDAL
             try
             {
                 fees = (from s in context.Appointments
-                        select EF.PolyclinicDBContext.GetDoctorFees()).FirstOrDefault();
+                        select EF.PolyclinicDBContext.GetDoctorFees(doctorId,date)).FirstOrDefault();
                 return fees;
             }
             catch (Exception ex)
             {
-
                 return  -99;
             }
         }

@@ -21,7 +21,7 @@ namespace PolyclinicDAL.Models
         }
 
         [DbFunction("ufn_CalculateDoctorFees","dbo")]
-        public static decimal GetDoctorFees()
+        public static decimal GetDoctorFees(string doctorId, DateTime date)
         {
             return 0;
         }
@@ -49,7 +49,7 @@ namespace PolyclinicDAL.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasDbFunction(() => PolyclinicDBContext.GetDoctorFees());
+            //modelBuilder.HasDbFunction(() => PolyclinicDBContext.GetDoctorFees());
 
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
